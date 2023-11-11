@@ -4,8 +4,6 @@ pragma solidity ^0.8.17;
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/09329f8a18f08df65863a5060f6e776bf7fccacf/contracts/access/Ownable.sol";
 
 contract AddressBook is Ownable {
-    uint256 public contactCount;
-
     //struct to represent a contact
     struct Contact {
         uint256 id;
@@ -15,10 +13,13 @@ contract AddressBook is Ownable {
     }
 
     //mapping to store contacts
-    mapping(uint256 => Contact) public contacts;
+    mapping(uint256 => Contact) private contacts;
 
     //event to log contact addition
     event ContactAdded(uint256 indexed id, string firstName, string lastName);
+
+    // Event to log contact deletion
+    event ContactDeleted(uint256 indexed id, string firstName, string lastName);
 
     // Custom error for when a contact is not found
     error ContactNotFound(uint256 id);
@@ -28,15 +29,13 @@ contract AddressBook is Ownable {
         uint256 _id,
         string memory _firstName,
         string memory _lastName,
-        uint256[] memory _phoneNumbers
+        uint[] memory _phoneNumbers
     ) external onlyOwner {
         Contact storage newContact = contacts[_id];
         newContact.id = _id;
         newContact.firstName = _firstName;
         newContact.lastName = _lastName;
         newContact.phoneNumbers = _phoneNumbers;
-
-        contactCount++;
 
         emit ContactAdded(_id, _firstName, _lastName);
     }
@@ -46,18 +45,26 @@ contract AddressBook is Ownable {
         Contact storage contactToDelete = contacts[_id];
         require(contactToDelete.id == _id, "ContactNotFound");
 
+        emit ContactDeleted(
+            _id,
+            contactToDelete.firstName,
+            contactToDelete.lastName
+        );
+
         delete contacts[_id];
     }
 
     // Function to get contact information
-    function getContact(uint256 _id)
+    function getContact(
+        uint256 _id
+    )
         external
         view
         returns (
             uint256 id,
             string memory firstName,
             string memory lastName,
-            uint256[] memory phoneNumbers
+            uint[] memory phoneNumbers
         )
     {
         Contact storage requestedContact = contacts[_id];
@@ -73,31 +80,31 @@ contract AddressBook is Ownable {
         );
     }
 
-    function getAllContacts() external view returns (Contact[] memory) {
-        uint256 index = 0;
-        for (uint256 i = 1; ; i++) {
-            if (contacts[i].id == 0) {
-                break;
-            }
-            index++;
+    // Function to get all contacts
+function getAllContacts() external view returns (Contact[] memory) {
+    uint256 contactCount = 0;
+    for (uint256 i = 1; i <= contacts.length; i++) {
+        if (contacts[i].id == i) {
+            contactCount++;
         }
+    }
 
-        Contact[] memory allContacts = new Contact[](index);
-        index = 0;
-        for (uint256 i = 1; ; i++) {
-            if (contacts[i].id == 0) {
-                break;
-            }
+    Contact[] memory allContacts = new Contact[](contactCount);
+    uint256 index = 0;
+    for (uint256 i = 1; i <= contacts.length; i++) {
+        if (contacts[i].id == i) {
             allContacts[index] = contacts[i];
             index++;
         }
-
-        return allContacts;
     }
+
+    return allContacts;
+}
+
 }
 
 contract AddressBookFactory {
-    function deploy() external returns (AddressBook) {
+    function deply() external returns (AddressBook) {
         AddressBook ab = new AddressBook();
         ab.transferOwnership(msg.sender);
         return ab;

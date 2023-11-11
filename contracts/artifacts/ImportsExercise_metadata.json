@@ -4,7 +4,114 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [],
+				"name": "Haiku",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "line1",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "line2",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "line3",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getHaiku",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "line1",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "line2",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "line3",
+								"type": "string"
+							}
+						],
+						"internalType": "struct SillyStringUtils.Haiku",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_line1",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_line2",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_line3",
+						"type": "string"
+					}
+				],
+				"name": "saveHaiku",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "shruggieHaiku",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "line1",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "line2",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "line3",
+								"type": "string"
+							}
+						],
+						"internalType": "struct SillyStringUtils.Haiku",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -33,11 +140,19 @@
 	},
 	"sources": {
 		"contracts/ImportsExercise.sol": {
-			"keccak256": "0xe62983706065b5996d07796705ad3413b4ce766b575c6e6e1589041b077176b3",
+			"keccak256": "0x73cd447d935f6592928ad93d036fb57d65aaa22b709e10c51b0b7a1d1404919f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://16350e1226729a04352169a306e7dad394c7d81a39bba1de009f8d4a0a5333a3",
-				"dweb:/ipfs/QmTS8iQFGhw8T1FA2Apndp4MrYwRCy7QikrExkawg5pjhX"
+				"bzz-raw://36db84b6c810d02d4b143e686e5e397454d5698271ffe97325c6783157d56b31",
+				"dweb:/ipfs/QmWvdrg85s5K2Twd9NcqyiF83RwPVphyZX2iST6gw1myy9"
+			]
+		},
+		"https://github.com/tadams95/Base-Camp/blob/master/contracts/SillyStringsUtils.sol": {
+			"keccak256": "0x66130cfeca5c8a3905327ccae0d28bc1cda0c9e1365f17aef5d9f738f154afc3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://942a2ef7a0b90321e55ef4b3e7439951734a35e69c3670ae36239265b965b967",
+				"dweb:/ipfs/QmZV8XSmm46xReXMpecVQjLNHSt7PxY7oYpLsi98FxXUeY"
 			]
 		}
 	},

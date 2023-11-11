@@ -18,7 +18,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/ImportsExercise.sol": "SillyStringUtils"
+			"contracts/SillyStringsUtils.sol": "SillyStringUtils"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -32,12 +32,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/ImportsExercise.sol": {
-			"keccak256": "0xe62983706065b5996d07796705ad3413b4ce766b575c6e6e1589041b077176b3",
+		"contracts/SillyStringsUtils.sol": {
+			"keccak256": "0xe4b95037a683738fd859801e7689d2a20b4c5b7741bb874926dc0608c98694e1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://16350e1226729a04352169a306e7dad394c7d81a39bba1de009f8d4a0a5333a3",
-				"dweb:/ipfs/QmTS8iQFGhw8T1FA2Apndp4MrYwRCy7QikrExkawg5pjhX"
+				"bzz-raw://690139b9236f43e93886be5c1ac3517f54fce614fd5c0c8c1b3efb6ed40ab06c",
+				"dweb:/ipfs/QmXMt2qt71jWHWEw91viFHX63sbGCyV7xPeTCUYvgsSSGV"
 			]
 		}
 	},

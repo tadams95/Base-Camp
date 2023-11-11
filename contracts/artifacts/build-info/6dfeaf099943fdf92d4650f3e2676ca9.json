@@ -1,5 +1,5 @@
 {
-	"id": "04b27e99574ee11c5c6fcfade5d6f4ab",
+	"id": "6dfeaf099943fdf92d4650f3e2676ca9",
 	"_format": "hh-sol-build-info-1",
 	"solcVersion": "0.8.17",
 	"solcLongVersion": "0.8.17+commit.8df45f5f",
@@ -7,7 +7,7 @@
 		"language": "Solidity",
 		"sources": {
 			"contracts/SillyStringsUtils.sol": {
-				"content": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.17;\n\nlibrary SillyStringUtils {\n\n    struct Haiku {\n        string line1;\n        string line2;\n        string line3;\n    }\n\n    function shruggie(string memory _input) internal pure returns (string memory) {\n        return string.concat(_input, unicode\" 🤷\");\n    }\n}"
+				"content": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.17;\n\nlibrary SillyStringUtils {\n\n    struct Haiku {\n        string line1;\n        string line2;\n        string line3;\n    }\n\n    function shruggie(string memory _input) internal pure returns (string memory) {\n        return string.concat(_input, unicode\" 🤷\");\n    }\n\n    \n}"
 			}
 		},
 		"settings": {
@@ -48,23 +48,23 @@
 						"version": 1
 					},
 					"evm": {
-						"assembly": "    /* \"contracts/SillyStringsUtils.sol\":59:324  library SillyStringUtils {... */\n  dataSize(sub_0)\n  dataOffset(sub_0)\n  0x0b\n  dup3\n  dup3\n  dup3\n  codecopy\n  dup1\n  mload\n  0x00\n  byte\n  0x73\n  eq\n  tag_1\n  jumpi\n  mstore(0x00, 0x4e487b7100000000000000000000000000000000000000000000000000000000)\n  mstore(0x04, 0x00)\n  revert(0x00, 0x24)\ntag_1:\n  mstore(0x00, address)\n  0x73\n  dup2\n  mstore8\n  dup3\n  dup2\n  return\nstop\n\nsub_0: assembly {\n        /* \"contracts/SillyStringsUtils.sol\":59:324  library SillyStringUtils {... */\n      eq(address, deployTimeAddress())\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa26469706673582212206076627d43f5c5b96642820103535c357e692214750373e4d1d20e6df75a564564736f6c63430008110033\n}\n",
+						"assembly": "    /* \"contracts/SillyStringsUtils.sol\":59:330  library SillyStringUtils {... */\n  dataSize(sub_0)\n  dataOffset(sub_0)\n  0x0b\n  dup3\n  dup3\n  dup3\n  codecopy\n  dup1\n  mload\n  0x00\n  byte\n  0x73\n  eq\n  tag_1\n  jumpi\n  mstore(0x00, 0x4e487b7100000000000000000000000000000000000000000000000000000000)\n  mstore(0x04, 0x00)\n  revert(0x00, 0x24)\ntag_1:\n  mstore(0x00, address)\n  0x73\n  dup2\n  mstore8\n  dup3\n  dup2\n  return\nstop\n\nsub_0: assembly {\n        /* \"contracts/SillyStringsUtils.sol\":59:330  library SillyStringUtils {... */\n      eq(address, deployTimeAddress())\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa26469706673582212201486176d016430ab988e4d1716f188ef725e5050bc0567cf3fee48442b30514264736f6c63430008110033\n}\n",
 						"bytecode": {
 							"functionDebugData": {},
 							"generatedSources": [],
 							"linkReferences": {},
-							"object": "60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212206076627d43f5c5b96642820103535c357e692214750373e4d1d20e6df75a564564736f6c63430008110033",
-							"opcodes": "PUSH1 0x56 PUSH1 0x50 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH1 0x0 BYTE PUSH1 0x73 EQ PUSH1 0x43 JUMPI PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH1 0x0 MSTORE PUSH1 0x0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH1 0x0 REVERT JUMPDEST ADDRESS PUSH1 0x0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH1 0x76 PUSH3 0x7D43F5 0xC5 0xB9 PUSH7 0x42820103535C35 PUSH31 0x692214750373E4D1D20E6DF75A564564736F6C634300081100330000000000 ",
-							"sourceMap": "59:265:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+							"object": "60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212201486176d016430ab988e4d1716f188ef725e5050bc0567cf3fee48442b30514264736f6c63430008110033",
+							"opcodes": "PUSH1 0x56 PUSH1 0x50 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH1 0x0 BYTE PUSH1 0x73 EQ PUSH1 0x43 JUMPI PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH1 0x0 MSTORE PUSH1 0x0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH1 0x0 REVERT JUMPDEST ADDRESS PUSH1 0x0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 EQ DUP7 OR PUSH14 0x16430AB988E4D1716F188EF725E POP POP 0xBC SDIV PUSH8 0xCF3FEE48442B3051 TIMESTAMP PUSH5 0x736F6C6343 STOP ADDMOD GT STOP CALLER ",
+							"sourceMap": "59:271:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
 						},
 						"deployedBytecode": {
 							"functionDebugData": {},
 							"generatedSources": [],
 							"immutableReferences": {},
 							"linkReferences": {},
-							"object": "73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212206076627d43f5c5b96642820103535c357e692214750373e4d1d20e6df75a564564736f6c63430008110033",
-							"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH1 0x76 PUSH3 0x7D43F5 0xC5 0xB9 PUSH7 0x42820103535C35 PUSH31 0x692214750373E4D1D20E6DF75A564564736F6C634300081100330000000000 ",
-							"sourceMap": "59:265:0:-:0;;;;;;;;"
+							"object": "73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212201486176d016430ab988e4d1716f188ef725e5050bc0567cf3fee48442b30514264736f6c63430008110033",
+							"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 EQ DUP7 OR PUSH14 0x16430AB988E4D1716F188EF725E POP POP 0xBC SDIV PUSH8 0xCF3FEE48442B3051 TIMESTAMP PUSH5 0x736F6C6343 STOP ADDMOD GT STOP CALLER ",
+							"sourceMap": "59:271:0:-:0;;;;;;;;"
 						},
 						"gasEstimates": {
 							"creation": {
@@ -80,288 +80,288 @@
 							".code": [
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "PUSH #[$]",
 									"source": 0,
 									"value": "0000000000000000000000000000000000000000000000000000000000000000"
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "PUSH [$]",
 									"source": 0,
 									"value": "0000000000000000000000000000000000000000000000000000000000000000"
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "PUSH",
 									"source": 0,
 									"value": "B"
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "DUP3",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "DUP3",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "DUP3",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "CODECOPY",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "DUP1",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "MLOAD",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "PUSH",
 									"source": 0,
 									"value": "0"
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "BYTE",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "PUSH",
 									"source": 0,
 									"value": "73"
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "EQ",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "PUSH [tag]",
 									"source": 0,
 									"value": "1"
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "JUMPI",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "PUSH",
 									"source": 0,
 									"value": "4E487B7100000000000000000000000000000000000000000000000000000000"
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "PUSH",
 									"source": 0,
 									"value": "0"
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "MSTORE",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "PUSH",
 									"source": 0,
 									"value": "0"
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "PUSH",
 									"source": 0,
 									"value": "4"
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "MSTORE",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "PUSH",
 									"source": 0,
 									"value": "24"
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "PUSH",
 									"source": 0,
 									"value": "0"
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "REVERT",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "tag",
 									"source": 0,
 									"value": "1"
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "JUMPDEST",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "ADDRESS",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "PUSH",
 									"source": 0,
 									"value": "0"
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "MSTORE",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "PUSH",
 									"source": 0,
 									"value": "73"
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "DUP2",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "MSTORE8",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "DUP3",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "DUP2",
 									"source": 0
 								},
 								{
 									"begin": 59,
-									"end": 324,
+									"end": 330,
 									"name": "RETURN",
 									"source": 0
 								}
 							],
 							".data": {
 								"0": {
-									".auxdata": "a26469706673582212206076627d43f5c5b96642820103535c357e692214750373e4d1d20e6df75a564564736f6c63430008110033",
+									".auxdata": "a26469706673582212201486176d016430ab988e4d1716f188ef725e5050bc0567cf3fee48442b30514264736f6c63430008110033",
 									".code": [
 										{
 											"begin": 59,
-											"end": 324,
+											"end": 330,
 											"name": "PUSHDEPLOYADDRESS",
 											"source": 0
 										},
 										{
 											"begin": 59,
-											"end": 324,
+											"end": 330,
 											"name": "ADDRESS",
 											"source": 0
 										},
 										{
 											"begin": 59,
-											"end": 324,
+											"end": 330,
 											"name": "EQ",
 											"source": 0
 										},
 										{
 											"begin": 59,
-											"end": 324,
+											"end": 330,
 											"name": "PUSH",
 											"source": 0,
 											"value": "80"
 										},
 										{
 											"begin": 59,
-											"end": 324,
+											"end": 330,
 											"name": "PUSH",
 											"source": 0,
 											"value": "40"
 										},
 										{
 											"begin": 59,
-											"end": 324,
+											"end": 330,
 											"name": "MSTORE",
 											"source": 0
 										},
 										{
 											"begin": 59,
-											"end": 324,
+											"end": 330,
 											"name": "PUSH",
 											"source": 0,
 											"value": "0"
 										},
 										{
 											"begin": 59,
-											"end": 324,
+											"end": 330,
 											"name": "DUP1",
 											"source": 0
 										},
 										{
 											"begin": 59,
-											"end": 324,
+											"end": 330,
 											"name": "REVERT",
 											"source": 0
 										}
@@ -375,7 +375,7 @@
 						},
 						"methodIdentifiers": {}
 					},
-					"metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/SillyStringsUtils.sol\":\"SillyStringUtils\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/SillyStringsUtils.sol\":{\"keccak256\":\"0x66130cfeca5c8a3905327ccae0d28bc1cda0c9e1365f17aef5d9f738f154afc3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://942a2ef7a0b90321e55ef4b3e7439951734a35e69c3670ae36239265b965b967\",\"dweb:/ipfs/QmZV8XSmm46xReXMpecVQjLNHSt7PxY7oYpLsi98FxXUeY\"]}},\"version\":1}",
+					"metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/SillyStringsUtils.sol\":\"SillyStringUtils\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/SillyStringsUtils.sol\":{\"keccak256\":\"0xe4b95037a683738fd859801e7689d2a20b4c5b7741bb874926dc0608c98694e1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://690139b9236f43e93886be5c1ac3517f54fce614fd5c0c8c1b3efb6ed40ab06c\",\"dweb:/ipfs/QmXMt2qt71jWHWEw91viFHX63sbGCyV7xPeTCUYvgsSSGV\"]}},\"version\":1}",
 					"storageLayout": {
 						"storage": [],
 						"types": null
@@ -709,11 +709,11 @@
 								}
 							],
 							"scope": 25,
-							"src": "59:265:0",
+							"src": "59:271:0",
 							"usedErrors": []
 						}
 					],
-					"src": "33:291:0"
+					"src": "33:297:0"
 				},
 				"id": 0
 			}

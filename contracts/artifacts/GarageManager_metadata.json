@@ -217,11 +217,11 @@
 	},
 	"sources": {
 		"contracts/StructsExercise.sol": {
-			"keccak256": "0x41941d993b51863da84f29eba7048e9c63e6d16213f07c655a587ad420aeaa1e",
+			"keccak256": "0x38aa5c33006613cd3260d349f9486c935378711d612ac58511485b5e32e1dfc9",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7037d0fcb70ea5b37538a34c06b6ac9021ed14d505228c54995a095cddffebc1",
-				"dweb:/ipfs/Qma6ZP55MyVod5mCrL6dpWPfPfVoJaG8yZK9XSCWkFyJh7"
+				"bzz-raw://7feb4871fe0713762ab84bc03e1f9cdb35978791fec288e4ea741878bdcf6d04",
+				"dweb:/ipfs/QmWWju9tsjeFz9nAHPcnDinNg3JBzsP7rtkHVe2DsVhrRi"
 			]
 		}
 	},

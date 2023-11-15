@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.17+commit.8df45f5f"
+		"version": "0.8.23+commit.f704f362"
 	},
 	"language": "Solidity",
 	"output": {
@@ -144,7 +144,7 @@
 		"compilationTarget": {
 			"contracts/MinimalTokenExercise.sol": "UnburnableToken"
 		},
-		"evmVersion": "london",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -157,11 +157,11 @@
 	},
 	"sources": {
 		"contracts/MinimalTokenExercise.sol": {
-			"keccak256": "0x337dfdb335d17e26c7d8e60bf19822148520ead9919bd95fd13c44b58cb9288a",
+			"keccak256": "0x0263922ea3e87cdb61ebf1d4d28ce24d05fd4befae864c7a0360745e2884cdda",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://9ff899d0a988cd6ede134ef8b6545207ab3fb9f6cf75b5f5d11bedc73c303828",
-				"dweb:/ipfs/QmNSzZMjPQyCpFD6jjevBfCvY7EoeCqaMJnStHiC8YtnHi"
+				"bzz-raw://05469f119bfc9a74bcd17fe256ed6ace21b71f5ead54c8c611d7ed75ca4c39ea",
+				"dweb:/ipfs/QmZpwiinmzjaouRv4rk8mCRYNhW3emQCuE16Vyx8ttzadi"
 			]
 		}
 	},

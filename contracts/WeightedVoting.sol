@@ -1,21 +1,23 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.17;
 
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/token/ERC20/ERC20.sol";
+// import "@openzeppelin/contracts/utils/structs/EnumerableSet.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.0/contracts/utils/structs/EnumerableSet.sol";
+// import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/token/ERC20/ERC20.sol";
 
 library WeightedVotingLibrary {
-    using EnumerableSet for EnumerableSet.AddressSet;
+    // using EnumerableSet for EnumerableSet.AddressSet;
 
     // Struct to represent an issue
     struct Issue {
         EnumerableSet.AddressSet voters;
         string issueDesc;
-        uint24 votesFor;
-        uint24 votesAgainst;
-        uint24 votesAbstain;
-        uint24 totalVotes;
-        uint24 quorum;
+        uint votesFor;
+        uint votesAgainst;
+        uint votesAbstain;
+        uint totalVotes;
+        uint quorum;
         bool passed;
         bool closed;
     }
@@ -24,11 +26,11 @@ library WeightedVotingLibrary {
     struct IssueView {
         address[] voters;
         string issueDesc;
-        uint24 votesFor;
-        uint24 votesAgainst;
-        uint24 votesAbstain;
-        uint24 totalVotes;
-        uint24 quorum;
+        uint votesFor;
+        uint votesAgainst;
+        uint votesAbstain;
+        uint totalVotes;
+        uint quorum;
         bool passed;
         bool closed;
     }
@@ -51,25 +53,26 @@ contract WeightedVoting is ERC20 {
     error TokensClaimed();
     error AllTokensClaimed();
     error NoTokensHeld();
-    error QuorumTooHigh(uint24 quorum);
+    error QuorumTooHigh(uint quorum);
     error AlreadyVoted();
     error VotingClosed();
 
     // Storage variables
-    uint24 public maxSupply;
-    uint24 public claimAmount;
-    uint24 public claimedAmount;
+    uint public maxSupply;
+    uint public claimAmount;
+    uint public claimedAmount;
 
     // Store address of token holder and balance
-    mapping(address => uint24) public balances;
+    mapping(address => uint) public balances;
 
     // Keep track of whether a wallet has claimed tokens.
     mapping(address => bool) public hasClaimed;
 
     // Constructor to initialize ERC-20 token
-    constructor(string memory _name, string memory _symbol)
-        ERC20(_name, _symbol)
-    {
+    constructor(
+        string memory _name,
+        string memory _symbol
+    ) ERC20(_name, _symbol) {
         maxSupply = 1_000_000;
         claimAmount = 100;
         issues.push();
@@ -89,10 +92,10 @@ contract WeightedVoting is ERC20 {
     }
 
     // Function to create an issue
-    function createIssue(string memory _issueDesc, uint24 _quorum)
-        external
-        returns (uint256 idx)
-    {
+    function createIssue(
+        string memory _issueDesc,
+        uint _quorum
+    ) external returns (uint idx) {
         require(
             balances[msg.sender] > 0,
             "Only token holders can create issues"
@@ -111,15 +114,13 @@ contract WeightedVoting is ERC20 {
     }
 
     // Function to get an issue
-    function getIssue(uint24 _id)
-        external
-        view
-        returns (WeightedVotingLibrary.IssueView memory)
-    {
+    function getIssue(
+        uint _id
+    ) external view returns (WeightedVotingLibrary.IssueView memory) {
         WeightedVotingLibrary.Issue storage issue = issues[_id];
 
         address[] memory voters = new address[](issue.voters.length());
-        for (uint256 i = 0; i < issue.voters.length(); i++) {
+        for (uint i = 0; i < issue.voters.length(); i++) {
             voters[i] = issue.voters.at(i);
         }
 
@@ -138,7 +139,7 @@ contract WeightedVoting is ERC20 {
     }
 
     // Function to vote
-    function vote(uint24 _issueId, WeightedVotingLibrary.Votes _vote) public {
+    function vote(uint _issueId, WeightedVotingLibrary.Votes _vote) public {
         // Ensure that the issue is not closed
         require(!issues[_issueId].closed, "Voting is closed for this issue");
 
@@ -150,7 +151,7 @@ contract WeightedVoting is ERC20 {
 
         // Record the voter's choice
         WeightedVotingLibrary.Issue storage issue = issues[_issueId];
-        uint24 voterBalance = balances[msg.sender];
+        uint voterBalance = balances[msg.sender];
 
         if (_vote == WeightedVotingLibrary.Votes.FOR) {
             issue.votesFor += voterBalance;

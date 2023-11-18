@@ -33,11 +33,11 @@
 	},
 	"sources": {
 		"contracts/WeightedVoting.sol": {
-			"keccak256": "0x791d7c56f845cecb944702e2a2060b44ac46952012cd2363e4d3dad2404c4ea2",
+			"keccak256": "0xf2339c604407c4df8741d792b3443cf8d7a368e1051e116483b3d917c9883af0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b58cc18717717af6d394e479701cc22f6ef9a165af07987729764d1c4f80374c",
-				"dweb:/ipfs/QmbJqgFArTBRHXEe9cHLhVtrHmKo7vpnQGwdESNBqmkEQs"
+				"bzz-raw://6814d2914b467ec26971da268f53c93b64e878194aa1df4d5ac3b446a9f8207f",
+				"dweb:/ipfs/QmYXaNxfnT6JH9AzrBsphBCZumvfM6HAgiPTudj2hz6Nwx"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v4.0/contracts/utils/structs/EnumerableSet.sol": {

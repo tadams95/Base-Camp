@@ -2,32 +2,35 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { useConnect } from "wagmi";
-import { MetaMaskConnector } from "wagmi/connectors/metaMask";
+import React from "react";
+// import { useConnect } from "wagmi";
+// import { MetaMaskConnector } from "wagmi/connectors/metaMask";
+import { useMoralis, useWeb3Contract } from "react-moralis";
 
 const navigation = [{ name: "Account", href: "#" }];
 
 export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { connectAsync } = useConnect();
+  //   const { connectAsync } = useConnect();
   const [isConnected, setIsConnected] = useState(false);
+  const { enableWeb3, isWeb3Enabled } = useMoralis();
 
-  const handleAuth = async () => {
-    try {
-      const { account, chain } = await connectAsync({
-        connector: new MetaMaskConnector(),
-      });
+  //   const handleAuth = async () => {
+  //     try {
+  //       const { account, chain } = await connectAsync({
+  //         connector: new MetaMaskConnector(),
+  //       });
 
-      const userData = { address: account, chainId: chain.id };
-      console.log(userData);
+  //       const userData = { address: account, chainId: chain.id };
+  //       console.log(userData);
 
-      // Update connection status
-      setIsConnected(true);
-    } catch (error) {
-      console.error("Failed to connect:", error);
-      // Handle connection error if needed
-    }
-  };
+  //       // Update connection status
+  //       setIsConnected(true);
+  //     } catch (error) {
+  //       console.error("Failed to connect:", error);
+  //       // Handle connection error if needed
+  //     }
+  //   };
 
   return (
     <header className="bg-white">
@@ -56,7 +59,7 @@ export default function NavBar() {
           />
         </a>
         <div className="flex flex-1 justify-end">
-          {isConnected ? (
+          {isWeb3Enabled ? (
             <span className="text-indigo-900 font-semibold border border-indigo-900 rounded-md px-3 py-2 text-sm shadow-sm">
               Connected
             </span>
@@ -64,7 +67,7 @@ export default function NavBar() {
             <button
               type="submit"
               className="rounded-md bg-indigo-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              onClick={handleAuth}
+              onClick={() => enableWeb3()}
             >
               Connect Wallet
             </button>
@@ -92,7 +95,7 @@ export default function NavBar() {
             </div>
 
             <div className="flex flex-1 justify-end">
-              {isConnected ? (
+              {isWeb3Enabled ? (
                 <span className="text-indigo-900 font-semibold border border-indigo-900 rounded-md px-3 py-2 text-sm shadow-sm">
                   Connected
                 </span>
@@ -100,7 +103,7 @@ export default function NavBar() {
                 <button
                   type="submit"
                   className="rounded-md bg-indigo-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  onClick={handleAuth}
+                  onClick={() => enableWeb3()}
                 >
                   Connect Wallet
                 </button>

@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import { useWeb3Contract } from "react-moralis";
+import { abi } from "../../constants/abi";
 
 export default function LockComponent() {
+  const [depositAmount, setDepositAmount] = useState("");
+  const [withdrawAmount, setWithdrawAmount] = useState("");
+
+  const { runContractFunction } = useWeb3Contract({
+    abi: abi,
+    contractAddress: "0xE9b3A1b1731115cc35d06C40caA375111b9bF80B",
+    functionName: "deposit",
+    params: {
+      amount: depositAmount,
+    },
+  });
+
+  const handleDeposit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    runContractFunction({ value: depositAmount } as any);
+  };
+
+  const handleWithdraw = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    runContractFunction();
+  };
+
   return (
-    <form>
+    <form onSubmit={handleDeposit}>
       <div className="space-y-12">
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 border-b border-gray-900/10 pb-12 md:grid-cols-3">
           <div>
@@ -75,11 +99,18 @@ export default function LockComponent() {
         >
           Cancel
         </button>
+
         <button
           type="submit"
           className="rounded-md bg-indigo-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
-          Submit
+          Deposit
+        </button>
+        <button
+          type="submit"
+          className="rounded-md bg-indigo-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        >
+          Withdraw
         </button>
       </div>
     </form>
